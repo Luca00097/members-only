@@ -1,0 +1,12 @@
+<h1>The Clubhouse Board</h1>
+
+<% @posts.each do |post| %>
+  <article>
+    <h2><%= post.title %></h2>
+    <p><%= post.body %></p>
+
+    <% if user_signed_in? %>
+      <small>by <%= post.user.name %></small>
+    <% end %>
+  </article>
+<% end %>
